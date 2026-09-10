@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+google-cloud-bigquery
+google-genai
+pydantic
+pandas
+pyarrow
+python-multipart
+firebase-admin
