@@ -387,6 +387,14 @@ function showLogin() {
   document.getElementById("loginScreen").style.display = "flex";
   document.getElementById("onboardingScreen").style.display = "none";
   document.getElementById("appContent").style.display = "none";
+  // Clear whatever was last typed here — otherwise switching accounts (e.g.
+  // signing out of the demo account to create a new one) leaves the previous
+  // email/password sitting in the form, which looks like a bug to anyone
+  // testing more than one account in the same browser session.
+  document.getElementById("loginEmail").value = "";
+  document.getElementById("loginPassword").value = "";
+  const errorEl = document.getElementById("loginError");
+  if (errorEl) errorEl.textContent = "";
 }
 
 function showOnboarding() {
